@@ -1,12 +1,10 @@
-startNumber = int(raw_input("Enter starting number here"))
-endNumber = int(raw_input("Enter fininshing number here"))
+import sys
 
-# xn = xn-1 + xn-2
-def fib(n):
-    if n > 0:
-        return n
-        return fib(n-2) + fib(n-1)
+def fib(n):    # write Fibonacci series up to n
+    a, b = 0, 1
+    for i in range(2,n): a, b = b, a+b
+    print b
 
-print map(fib, range(startNumber,endNumber))
 
-        
+if __name__ == "__main__":
+    fib(int(sys.argv[1]))
